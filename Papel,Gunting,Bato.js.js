@@ -102,4 +102,5 @@ main();
 function reset(){
     document.getElementById("user-score").innerHTML = 0;
     document.getElementById("computer-score").innerHTML = 0;
+    document.getElementById("result").innerHTML = ("Tayo na at mag laro!");
 }
