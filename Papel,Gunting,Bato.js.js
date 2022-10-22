@@ -30,8 +30,7 @@ function win(userChoice, computerChoice) {
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = userChoice + smallUserWord + " laban sa " + computerChoice + smallCompWord + ". Panalo ka! 🥳";
-    userChoice_div.classList.add('green-glow');
-    setTimeout(() => { userChoice_div.classList.remove('.green-glow')}, 300);
+   
 }
 
 function lose(userChoice, computerChoice){
@@ -41,10 +40,8 @@ function lose(userChoice, computerChoice){
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-   
     result_p.innerHTML = userChoice + smallUserWord + " laban sa " + computerChoice + smallCompWord + ". talo ka...😭";
-    userChoice_div.classList.add('red-glow');
-    setTimeout(() => { userChoice_div.classList.remove('.red-glow')}, 300);
+   
 }
 
 function draw(userChoice, computerChoice) {
@@ -52,8 +49,6 @@ function draw(userChoice, computerChoice) {
     const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
     result_p.innerHTML = userChoice + smallUserWord + " laban sa " + computerChoice + smallCompWord + ". Tabla.🤪";
-    userChoice_div.classList.add('gray-glow');
-    setTimeout(() => { userChoice_div.classList.remove('.gray-glow')}, 300);
 }
 
 function game(userChoice){
@@ -77,13 +72,6 @@ function game(userChoice){
 
 }
 }
-
-// const reset = () => {
-//     userScore = 0;
-//     computerScore = 0;
-//     document.querySelector("userScore").innerHTML = userScore;
-//     document.querySelector("computerScore").innerHTML = computerScore;
-//  }
 
 function main() {
     papel_div.addEventListener('click', function() {
