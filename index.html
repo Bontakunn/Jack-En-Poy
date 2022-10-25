@@ -17,36 +17,46 @@
         <h1>Papel-Gunting-Bato</h1>
     </header>
 
-    <div class="score-board">
-        <div id="user-label" class="badge">Manlalaro</div>
-        <div id="computer-label" class="badge">Computer</div>
-        <span id="user-score">0</span>:<span id="computer-score">0</span>
-        <!-- <div class="movesleft">Moves Left: 10 </div> -->
-    </div>
+<br>
+<table id="table" class="container table table-alert mt-3 ">
+    <tr>
+        <td>Player</td>
+        <td>Computer</td>
+        <td>Result</td>
+      </tr>
+</table>
 
+<br>
     <div id="result" class="result">
         <p>Tayo na at mag Laro!</p>
     </div>
 
     <div class="choices">
         <div class="choice" id="Papel">
-            <img src="papel.png" alt="">
+            <img src="image/papel.png" alt="">
         </div>
         <div class="choice" id="Gunting">
-            <img src="gunting.png" alt="">
+            <img src="image/gunting.png" alt="">
         </div>
         <div class="choice" id="Bato">
-            <img src="bato.png" alt="">
+            <img src="image/bato.png" alt="">
         </div>
     </div>
     <p id="action-message">PUMILI NG GALAW</p>
     <br>
+
+    <div class="score-board">
+        <div id="user-label" class="badge">Manlalaro</div>
+        <div id="computer-label" class="badge">Computer</div>
+        <span id="user-score">0</span>:<span id="computer-score">0</span>
+         <!-- <div class="movesleft">Moves Left: 10 </div> -->
+    </div>
     <hr>
     <button id="reset" onclick="reset()">Umulit</button> 
     <!-- <button id="view_score">Tignan ang Resulta</button> -->
-    </div>       
     <script src="Papel,Gunting,Bato.js.js"></script>
 </center>
+</div>
 
 </body>
 
