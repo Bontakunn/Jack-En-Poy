@@ -9,22 +9,40 @@
 }
 
 body {
-    background-image: url('background.png');
+    background-image: url('image/background.png');
 }
 
 header {
     background: gray;
     padding: 10px;
+    margin: auto;
+    
 }
 
 
 
 header > h1 {
+    margin: auto;
     color: #fdfdff;
     text-align: center;
     font-family: 'Shadows Into Light Two', cursive;
 }
 
+
+.table {
+    margin: 30px auto;
+    border:3px solid white;
+    border-radius: 10px;
+    text-align: top center;
+    width: 600px;
+    height: 700;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: 'Shadows Into Light', cursive;
+    position: relative;
+
+}
 .score-board {
     margin: 30px auto;
     border:3px solid white;
