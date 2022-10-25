@@ -10,14 +10,6 @@ const bato_div = document.getElementById("Bato");
 const matchHistory_div = document.getElementById(".score-board");
 
 
-
-function match_his (){
-     let computerScore_span = document.getElementById("computerScore").innerHTML;
-     let userChoice = document.getElementById ("userChoice").innerHTML;
-document.querySelector ("#his").innerHTML += computerScore_span + "vs" + userChoice + "<br>";
-}
-
-
 function getComputerChoice() {
     const choices = ['Papel', 'Gunting', 'Bato'];
     const randomNumber = Math.floor(Math.random() * 3);
