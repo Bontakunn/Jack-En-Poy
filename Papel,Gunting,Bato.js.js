@@ -7,30 +7,31 @@ const result_p = document.querySelector(".result");
 const papel_div = document.getElementById("Papel");
 const gunting_div = document.getElementById("Gunting");
 const bato_div = document.getElementById("Bato");
+const matchHistory_div = document.getElementById(".score-board");
 
 
-// const movesLeft = document.querySelector('.movesleft');
-// 				moves++;
-// 				movesLeft.innerText = `Moves Left: ${10-moves}`;
+
+function match_his (){
+     let computerScore_span = document.getElementById("computerScore").innerHTML;
+     let userChoice = document.getElementById ("userChoice").innerHTML;
+document.querySelector ("#his").innerHTML += computerScore_span + "vs" + userChoice + "<br>";
+}
 
 
 function getComputerChoice() {
     const choices = ['Papel', 'Gunting', 'Bato'];
     const randomNumber = Math.floor(Math.random() * 3);
-    return choices[randomNumber];
-    
-}
- getComputerChoice();
+   return choices[randomNumber];   
+ }
 
 function win(userChoice, computerChoice) {
-    const userChoice_div = document.getElementById("userChoice");
     const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
+    const userChoice_div = document.getElementById("userChoice");
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = userChoice + smallUserWord + " laban sa " + computerChoice + smallCompWord + ". Panalo ka! 🥳";
-   
 }
 
 function lose(userChoice, computerChoice){
@@ -40,8 +41,9 @@ function lose(userChoice, computerChoice){
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = userChoice + smallUserWord + " laban sa " + computerChoice + smallCompWord + ". talo ka...😭";
    
+    result_p.innerHTML = userChoice + smallUserWord + " laban sa " + computerChoice + smallCompWord + ". talo ka...😭";
+    
 }
 
 function draw(userChoice, computerChoice) {
@@ -71,9 +73,24 @@ function game(userChoice){
          break;
 
 }
-}
+addMatchHistory(userChoice, computerChoice);
+  declareWinner();
+};
 
-function main() {
+const addMatchHistory = (userChoice, computerChoice) => {
+    const table = document.getElementById("table");
+    const row = table.insertRow(1);
+    const cellOne = row.insertCell();
+    const cellTwo = row.insertCell();
+    const cellThree = row.insertCell();
+    const winnerMessage = document.getElementById("result").innerText;
+    cellOne.innerHTML = ` ${userChoice}`;
+    cellTwo.innerHTML = ` ${computerChoice}`;
+    cellThree.innerHTML = "Winner";
+    cellThree.innerHTML = `${winnerMessage}`;
+  };
+
+function mainGame() {
     papel_div.addEventListener('click', function() {
         game("Papel");
     })
@@ -85,10 +102,12 @@ function main() {
     })
 }
 
-main();
+mainGame();
 
 function reset(){
     document.getElementById("user-score").innerHTML = 0;
     document.getElementById("computer-score").innerHTML = 0;
     document.getElementById("result").innerHTML = ("Tayo na at mag laro!");
 }
+
+reset();
